@@ -34,8 +34,36 @@ void ArboreBinar::preOrdine(Nod* nod) const {
     }
 }
 
+void ArboreBinar::inOrdine(Nod* nod) const {
+    if (nod) {
+        inOrdine(nod->stanga);
+        std::cout << nod->valoare << " ";
+        inOrdine(nod->dreapta);
+    }
+}
+
+void ArboreBinar::postOrdine(Nod* nod) const {
+    if (nod) {
+        postOrdine(nod->stanga);
+        postOrdine(nod->dreapta);
+        std::cout << nod->valoare << " ";
+    }
+}
+
 void ArboreBinar::parcurgerePreOrdine() const {
     std::cout << "Parcurgere in pre-ordine: ";
     preOrdine(radacina);
+    std::cout << "\n";
+}
+
+void ArboreBinar::parcurgereInOrdine() const {
+    std::cout << "Parcurgere in ordine: ";
+    inOrdine(radacina);
+    std::cout << "\n";
+}
+
+void ArboreBinar::parcurgerePostOrdine() const {
+    std::cout << "Parcurgere in post-ordine: ";
+    postOrdine(radacina);
     std::cout << "\n";
 }

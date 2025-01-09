@@ -10,6 +10,8 @@ int main() {
     arbore.insereaza(3);
 
     arbore.parcurgerePreOrdine();
+    arbore.parcurgereInOrdine();
+    arbore.parcurgerePostOrdine();
 
     return 0;
 }
