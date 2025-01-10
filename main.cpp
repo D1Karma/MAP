@@ -4,10 +4,7 @@
 int main() {
     ArboreBinar arbore;
 
-    arbore.insereaza(10);
-    arbore.insereaza(5);
-    arbore.insereaza(15);
-    arbore.insereaza(3);
+    arbore.insereazaRandom(10, 1, 100);
 
     arbore.parcurgerePreOrdine();
     arbore.parcurgereInOrdine();

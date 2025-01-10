@@ -1,5 +1,7 @@
 #include "BinaryTree.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 ArboreBinar::ArboreBinar() : radacina(nullptr) {}
 
@@ -66,4 +68,12 @@ void ArboreBinar::parcurgerePostOrdine() const {
     std::cout << "Parcurgere in post-ordine: ";
     postOrdine(radacina);
     std::cout << "\n";
+}
+
+void ArboreBinar::insereazaRandom(int numarElemente, int min, int max) {
+    srand(time(0));
+    for (int i = 0; i < numarElemente; ++i) {
+        int valoareAleatoare = rand() % (max - min + 1) + min;
+        insereaza(valoareAleatoare);
+    }
 }

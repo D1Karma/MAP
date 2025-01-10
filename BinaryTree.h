@@ -1,6 +1,8 @@
 #ifndef ARBORE_BINAR_H
 #define ARBORE_BINAR_H
 
+#include <vector>
+
 struct Nod {
     int valoare;
     Nod* stanga;
@@ -23,6 +25,7 @@ public:
     void parcurgerePreOrdine() const;
     void parcurgereInOrdine() const;
     void parcurgerePostOrdine() const;
+    void insereazaRandom(int numarElemente, int min, int max);
 };
 
 #endif
