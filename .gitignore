@@ -1,5 +1,15 @@
+# excludem fisierele obiect, executabile si fisiere generate la compilare
+
 *.o
 *.out
 *.exe
 /build/
 
+# excludem fisiere temporare
+
+*.tmp
+*.log
+
+# excludem fisiere de configurare IDE
+.idea/
+.vscode/
