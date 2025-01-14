@@ -1,10 +1,12 @@
-#include "BinaryTree.h"
+#include "BinaryTree.h" // include header file - ul in care sunt declarate functiile clasei
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // pentru a putea folosi functia rand()
+#include <ctime> // biblioteca pentru a lucra cu timp(pentru initializarea generatorului de numere aleatoare)
 
+// constructorul clasei care initializeaza radacina (initial gol)
 ArboreBinar::ArboreBinar() : radacina(nullptr) {}
 
+// inserare valoare noua in arbore. daca noua valoare e mai mica decat radacina se verif. subarborele stang...
 void ArboreBinar::insereaza(int valoare) {
     if (!radacina) {
         radacina = new Nod(valoare);
@@ -27,7 +29,7 @@ void ArboreBinar::insereaza(int valoare) {
         }
     }
 }
-
+// functie recursiva pentru afisarea in preordine: radacina, stanga, dreapta
 void ArboreBinar::preOrdine(Nod* nod) const {
     if (nod) {
         std::cout << nod->valoare << " ";
@@ -35,7 +37,7 @@ void ArboreBinar::preOrdine(Nod* nod) const {
         preOrdine(nod->dreapta);
     }
 }
-
+// functie recursiva pentru afisare in-ordine: stanga, radacina, dreapta
 void ArboreBinar::inOrdine(Nod* nod) const {
     if (nod) {
         inOrdine(nod->stanga);
@@ -43,7 +45,7 @@ void ArboreBinar::inOrdine(Nod* nod) const {
         inOrdine(nod->dreapta);
     }
 }
-
+// functie recursiva post-ordine: stanga,dreapta,radacina
 void ArboreBinar::postOrdine(Nod* nod) const {
     if (nod) {
         postOrdine(nod->stanga);
@@ -51,7 +53,7 @@ void ArboreBinar::postOrdine(Nod* nod) const {
         std::cout << nod->valoare << " ";
     }
 }
-
+//afiseaza mesaj si apeleaza functiile de parcurgere
 void ArboreBinar::parcurgerePreOrdine() const {
     std::cout << "Parcurgere in pre-ordine: ";
     preOrdine(radacina);
@@ -69,7 +71,7 @@ void ArboreBinar::parcurgerePostOrdine() const {
     postOrdine(radacina);
     std::cout << "\n";
 }
-
+// generator n valori aleatoare intre min - max si le insereaza in arbore
 void ArboreBinar::insereazaRandom(int numarElemente, int min, int max) {
     srand(time(0));
     for (int i = 0; i < numarElemente; ++i) {

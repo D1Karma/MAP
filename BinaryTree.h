@@ -1,13 +1,13 @@
+// asigura ca fisierul este inclus o singura data la compilare
 #ifndef ARBORE_BINAR_H
 #define ARBORE_BINAR_H
 
-#include <vector>
-
+// structura nod
 struct Nod {
     int valoare;
     Nod* stanga;
     Nod* dreapta;
-
+// initializeaza nodul, nodul nu are copii initial (nullptr)
     Nod(int val) : valoare(val), stanga(nullptr), dreapta(nullptr) {}
 };
 
