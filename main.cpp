@@ -3,9 +3,7 @@
 
 int main() {
     ArboreBinar arbore;
-
     arbore.insereazaRandom(10, 1, 100);
-
     arbore.parcurgerePreOrdine();
     arbore.parcurgereInOrdine();
     arbore.parcurgerePostOrdine();
