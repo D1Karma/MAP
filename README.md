@@ -55,7 +55,8 @@ Scopul acestui proiect este de a crea o aplicație care vizualizează diferitele
 - Aplicația permite vizualizarea arborilor binari și a parcurgerilor acestora, oferind o metodă intuitivă de înțelegere a acestui concept.
 
 ## Capturi de ecran
-![Captură de ecran](MAP/rulareIMG.png)
+![Captură de ecran](images/rulareIMG.png)
+![Captură de ecran](images/rulare2IMG.png)
 
 ## Bibliografie
 - ChatGPT
