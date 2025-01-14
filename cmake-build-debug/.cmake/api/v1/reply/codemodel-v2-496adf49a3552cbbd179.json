@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/aniso/CLionProjects/MAP/cmake-build-debug",
-		"source" : "C:/Users/aniso/CLionProjects/MAP"
+		"build" : "C:/Users/aniso/Desktop/MAP/MAP/cmake-build-debug",
+		"source" : "C:/Users/aniso/Desktop/MAP/MAP"
 	},
 	"version" : 
 	{

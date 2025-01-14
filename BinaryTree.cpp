@@ -1,7 +1,8 @@
 #include "BinaryTree.h" // include header file - ul in care sunt declarate functiile clasei
 #include <iostream>
 #include <cstdlib> // pentru a putea folosi functia rand()
-#include <ctime> // biblioteca pentru a lucra cu timp(pentru initializarea generatorului de numere aleatoare)
+#include <ctime>   // biblioteca pentru a lucra cu timp(pentru initializarea generatorului de numere aleatoare)
+#include <queue>   // pentru implementarea cozii utilizată la parcurgerea pe nivel
 
 // constructorul clasei care initializeaza radacina (initial gol)
 ArboreBinar::ArboreBinar() : radacina(nullptr) {}
@@ -29,6 +30,7 @@ void ArboreBinar::insereaza(int valoare) {
         }
     }
 }
+
 // functie recursiva pentru afisarea in preordine: radacina, stanga, dreapta
 void ArboreBinar::preOrdine(Nod* nod) const {
     if (nod) {
@@ -37,6 +39,7 @@ void ArboreBinar::preOrdine(Nod* nod) const {
         preOrdine(nod->dreapta);
     }
 }
+
 // functie recursiva pentru afisare in-ordine: stanga, radacina, dreapta
 void ArboreBinar::inOrdine(Nod* nod) const {
     if (nod) {
@@ -45,6 +48,7 @@ void ArboreBinar::inOrdine(Nod* nod) const {
         inOrdine(nod->dreapta);
     }
 }
+
 // functie recursiva post-ordine: stanga,dreapta,radacina
 void ArboreBinar::postOrdine(Nod* nod) const {
     if (nod) {
@@ -53,6 +57,7 @@ void ArboreBinar::postOrdine(Nod* nod) const {
         std::cout << nod->valoare << " ";
     }
 }
+
 //afiseaza mesaj si apeleaza functiile de parcurgere
 void ArboreBinar::parcurgerePreOrdine() const {
     std::cout << "Parcurgere in pre-ordine: ";
@@ -71,6 +76,7 @@ void ArboreBinar::parcurgerePostOrdine() const {
     postOrdine(radacina);
     std::cout << "\n";
 }
+
 // generator n valori aleatoare intre min - max si le insereaza in arbore
 void ArboreBinar::insereazaRandom(int numarElemente, int min, int max) {
     srand(time(0));
@@ -78,4 +84,24 @@ void ArboreBinar::insereazaRandom(int numarElemente, int min, int max) {
         int valoareAleatoare = rand() % (max - min + 1) + min;
         insereaza(valoareAleatoare);
     }
+}
+
+// functie pentru parcurgerea pe nivel
+void ArboreBinar::parcurgerePeNivel() const {
+    if (!radacina) return;
+
+    std::queue<Nod*> coada;
+    coada.push(radacina);
+
+    std::cout << "Parcurgere pe nivel: ";
+    while (!coada.empty()) {
+        Nod* curent = coada.front();
+        coada.pop();
+        std::cout << curent->valoare << " ";
+
+        // Adauga nodurile copil în coada
+        if (curent->stanga) coada.push(curent->stanga);
+        if (curent->dreapta) coada.push(curent->dreapta);
+    }
+    std::cout << "\n";
 }

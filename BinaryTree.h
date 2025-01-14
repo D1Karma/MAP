@@ -7,7 +7,7 @@ struct Nod {
     int valoare;
     Nod* stanga;
     Nod* dreapta;
-// initializeaza nodul, nodul nu are copii initial (nullptr)
+    // initializeaza nodul, nodul nu are copii initial (nullptr)
     Nod(int val) : valoare(val), stanga(nullptr), dreapta(nullptr) {}
 };
 
@@ -26,6 +26,10 @@ public:
     void parcurgereInOrdine() const;
     void parcurgerePostOrdine() const;
     void insereazaRandom(int numarElemente, int min, int max);
+    void parcurgerePeNivel() const;
 };
 
 #endif
+
+
+
