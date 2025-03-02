@@ -59,7 +59,6 @@ Scopul acestui proiect este de a crea o aplicație care vizualizează diferitele
 ![Captură de ecran](images/rulare2IMG.png)
 
 ## Bibliografie
-- ChatGPT
 - Docker Tutorial for Beginners - mCoding
 - Git Tutorial - [W3Schools](https://www.w3schools.com/)
 - Introduction to Binary Tree - [GeeksforGeeks](https://www.geeksforgeeks.org/introduction-to-binary-tree/)
